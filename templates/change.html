@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block change_note %}
+<form action="{{ url_for('change') }}" method="POST">
+
+	<div class="form-group">
+		<label for="exampleInputID">ID</label>
+		<input type="text" class="form-control" id="exampleInputID" name="note_id" value="{{ request.form.get('note_id', '') }}">
+
+		<label for="exampleInputTitle">New title</label>
+		<input type="text" class="form-control" id="exampleInputTitle" name="title" value="{{ request.form.get('title', '') }}" maxlength="30">
+	</div>
+
+	<div class="form-group">
+		<label for="exampleInputText">New text</label>
+		<textarea type="text" lang="ru" class="form-control" id="exampleInputText" name="text" value="{{ request.form.get('text', '') }}" maxlength="500" rows="10"></textarea>
+	</div>
+
+	<button type="submit" class="btn btn-warning">Change</button>
+
+</form>
+{% endblock %}

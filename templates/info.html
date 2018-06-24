@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block information %}
+	[
+	{% for res in results %}
+		<div class="result">
+			&emsp;{<br>&emsp;&emsp;"id": {{res['id']}},<br>&emsp;&emsp;"title": {{res['title']}},<br>&emsp;&emsp;"text": {{res['text']}},<br>&emsp;&emsp;"date_create": {{res['date_create']}},<br>&emsp;&emsp;"date_update": {{res['date_update']}}<br>&emsp;}
+		</div>
+	{% endfor %}
+	]
+
+{% endblock %}
